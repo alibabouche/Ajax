@@ -20,17 +20,22 @@
     </head>
     <body>
 
-        <form method="post">
-            <label for="lastName">Nom: </label>
-            <input type="text" name="lastName" id="lastName">
-
-            <label for="firstName">Prénom: </label>
-            <input type="text" name="firstName" id="firstName">
-
-            <label for="Phone">Téléphone: </label>
-            <input type="text" name="Phone" id="Phone">
-
-            <input type="submit" value="Enregistrer" id="submit">
+        <form method="post" class="fomular">
+            <li>
+                <label for="lastName">Nom: </label>
+                <input type="text" name="lastName" id="lastName">
+            </li>
+            <li>
+                <label for="firstName">Prénom: </label>
+                <input type="text" name="firstName" id="firstName">
+            </li>
+            <li>
+                <label for="Phone">Téléphone: </label>
+                <input type="text" name="phone" id="phone">
+            </li>
+            <li>
+                <input type="button" value="Enregistrer" id="submit">
+            </li>
         </form>
 
         <div id="contactList"></div>

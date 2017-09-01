@@ -1,25 +1,25 @@
 <?php
 
-/*if(isset($_POST["lastName"]) && isset($_POST["firstName"]) && isset($_POST["phone"] && !empty($_POST["lastName"]) && !empty($_POST["firstName"]) && !empty($_POST["phone"])))
-{*/
 	$lastName = $_POST["nom"];
 	$firstName = $_POST["prenom"];
 	$phone = $_POST["telephone"];
-	
-	$orders = [$lastName, $firstName, $phone];
 
-	echo $lastName;
+	//if pour éviter les champs vide qui peuvent spamer la bdd, si l'user click bcp sur le bouton
+	if(!empty($lastName) && !empty($firstName) && !empty($phone))
+	{	
+		include "connectionPDO.php";
 
-	/*include "connectionPDO.php";
+		$query = $pdo->prepare("
+			INSERT INTO contacts
+			VALUES(?, ?, ?)");
 
-	$query = $pdo->prepare("
-		INSERT INTO contacts
-		VALUES(?, ?, ?)");
+		$query->execute([$lastName, $firstName, $phone]);
 
-	$query->execute([$lastName, $firstName, $phone]);*/
-
-//}
-	
-
+		echo $lastName." ".$firstName." ".$phone;
+	}
+	else
+	{
+		echo "1";
+	}
 
 ?>
