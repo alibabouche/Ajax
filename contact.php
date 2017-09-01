@@ -1,8 +1,8 @@
 <?php
 
-	$lastName = $_POST["nom"];
-	$firstName = $_POST["prenom"];
-	$phone = $_POST["telephone"];
+	$lastName = trim($_POST["nom"]);
+	$firstName = trim($_POST["prenom"]);
+	$phone = trim($_POST["telephone"]);
 
 	//if pour éviter les champs vide qui peuvent spamer la bdd, si l'user click bcp sur le bouton
 	if(!empty($lastName) && !empty($firstName) && !empty($phone))
